@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint **/*.js --ignore-pattern node_modules/",
     "start": "node ./bin/www",
-    "nodemon": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
