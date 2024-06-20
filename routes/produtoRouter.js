@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const produtoController = require('../controllers/produtoController');
-const {validarProduto} = require('../middlewares/produtoMiddleware');
+const {validarProduto} = require('../middleware/produtoMiddleware');
 
 router
     .get('/', produtoController.buscarTodos)
