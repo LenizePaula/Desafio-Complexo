@@ -1,4 +1,3 @@
-const express = require('express');
 const cacheController = require('../controllers/cacheController');
 
 async function cacheMiddleware(req, res, next) {
@@ -15,6 +14,7 @@ async function cacheMiddleware(req, res, next) {
 }
 
 module.exports = cacheMiddleware;
+
 
 
 
