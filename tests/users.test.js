@@ -1,5 +1,6 @@
 const request = require('supertest');
 const app = require('../app');
+const { validarCliente } = require('../middleware/clienteMiddleware')
 
 describe('Testes de validação e autenticação', () => {
     test('Deve validar nome, sobrenome, produto e descrição (3-255 caracteres)', async () => {
