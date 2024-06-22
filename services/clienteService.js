@@ -20,7 +20,7 @@ async function buscarTodos() {
             console.log('Dados armazenados no cache:', rows);
             return rows;
         }
-        return null; // Retorna null se não encontrar clientes
+        return null; 
     } catch (error) {
         console.error('Erro ao buscar todos os clientes:', error);
         throw error;
@@ -29,9 +29,8 @@ async function buscarTodos() {
 
 async function salvar(cliente) {
     try {
-        // Lógica para salvar cliente no banco de dados
         await pool.query('INSERT INTO clientes SET ?', cliente);
-        return true; // Exemplo de retorno
+        return true; 
     } catch (error) {
         console.error('Erro ao salvar cliente:', error);
         throw error;
@@ -40,10 +39,9 @@ async function salvar(cliente) {
 
 async function atualizar(cliente) {
     try {
-        // Lógica para atualizar cliente no banco de dados
         await pool.query('UPDATE clientes SET ? WHERE id = ?', [cliente, cliente.id]);
-        return true; // Exemplo de retorno
-    } catch (error) {
+        return true; 
+        } catch (error) {
         console.error('Erro ao atualizar cliente:', error);
         throw error;
     }
@@ -51,9 +49,8 @@ async function atualizar(cliente) {
 
 async function remover(id) {
     try {
-        // Lógica para remover cliente no banco de dados
         await pool.query('DELETE FROM clientes WHERE id = ?', id);
-        return true; // Exemplo de retorno
+        return true;
     } catch (error) {
         console.error('Erro ao remover cliente:', error);
         throw error;
@@ -66,3 +63,4 @@ module.exports = {
     atualizar,
     remover,
 };
+

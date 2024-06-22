@@ -3,7 +3,7 @@ const router = express.Router();
 const clienteController = require('../controllers/clienteController');
 const { validarCliente } = require('../middleware/clienteMiddleware');
 const cacheMiddleware = require('../middleware/cacheMiddleware');
-const autenticarJWT = require('../middleware/authMiddleware'); // Middleware de autenticação JWT
+const autenticarJWT = require('../middleware/authMiddleware'); 
 
 router
     .get('/', autenticarJWT, cacheMiddleware, clienteController.buscarTodos)

@@ -1,5 +1,5 @@
 const clienteService = require('../services/clienteService');
-const cacheController = require('../controllers/cacheController'); // Adicione o cacheController
+const cacheController = require('../controllers/cacheController');
 
 const buscarTodos = async (req, res) => {
   try {
