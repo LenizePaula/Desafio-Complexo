@@ -3,6 +3,8 @@ const router = express.Router();
 const pool = require('../config/databaseConfig');
 const autenticarJWT = require('../middleware/authMiddleware');
 
+require('dotenv').config();
+
 router.post('/', autenticarJWT, async (req, res) => {
     try {
         const [result] = await pool.query('UPDATE usuarios SET token = NULL WHERE id = ?', [req.user.id]);

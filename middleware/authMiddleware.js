@@ -11,12 +11,13 @@ const authenticateJWT = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
+    // Consulta para verificar se o usuário existe com o token fornecido
     const [rows] = await pool.query('SELECT * FROM usuarios WHERE id = ? AND token = ?', [decoded.id, token]);
     if (rows.length === 0) {
       return res.status(401).json({ message: 'Token inválido' });
     }
 
-    req.user = decoded;
+    req.user = decoded; // Adiciona o usuário decodificado ao objeto de requisição (req.user)
     next();
   } catch (error) {
     console.error('Erro ao autenticar token:', error);
@@ -25,4 +26,5 @@ const authenticateJWT = async (req, res, next) => {
 };
 
 module.exports = authenticateJWT;
+
 
